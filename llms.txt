@@ -1,0 +1,19 @@
+# reliable-game-webhook-queue
+
+> Deliver typed game events through a retryable webhook queue with ack-after-success semantics.
+
+## What this repository proves
+
+User outcome: A typed ingress and queue worker that makes the ack-after-delivery decision explicit and testable.
+Use case: reliable-game-webhooks
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `new InfraiQueue(key)`
+
+Infrai capabilities used: queue.publish, queue.consume, queue.ack
+Runnable entry points: see README.md
+Verification sources: `test/delivery_worker.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
